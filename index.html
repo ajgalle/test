@@ -9,19 +9,32 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  
    <link rel="stylesheet" href="css/main.css">
-  <script src="js/scripts.js"></script>
- 
+
   </head>
 <body>
 
 <div class="container-fluid">
-  <h1>Fetch and Promise from CodeAnywhere project</h1>
-  <div class="row">
-    <div class="col-sm-4" style="background-color:lavender;">.col-sm-4</div>
-    <div class="col-sm-4" style="background-color:lavenderblush;">.col-sm-4</div>
-    <div class="col-sm-4" style="background-color:lavender;">.col-sm-4</div>
+<div class="text-center">
+  <h1 style="padding:25px">Fetch and Promise from CodEnvy project</h1>
+</div>
+  <div class="row text-center" >
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4" style="background-color:lavender;"> 
+        <p>Click the button to see a picture of a dog.</p></br>
+        <button id="btnDog" class="btn btn-primary"> Click! </button>
+    </div>
+    
+    <div class="col-sm-4" id="dogImgDiv" style="background-color:lavenderblush;">
+        <img id="displayImage" src="http://dog.ceo/img/dog-api-logo.svg" style="height:200px; width:200px;" alt="API by dog.ceo">
+        <p>Thank you to <a href="http://dog.ceo/dog-api/" target="_blank">Dog CEO</a> for the API<p>
+    </div>
+    <div class="col-sm-2"></div>
+        <div id="printTarget">
+           
+        </div>
   </div>
 </div>
-
+  <script src="js/scripts.js"></script>
+ 
 </body>
 </html>
