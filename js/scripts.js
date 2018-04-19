@@ -1,9 +1,23 @@
 
-// first, Lets get all them dogs.
-//const dogChart = document.getElementById("printTarget");
-    //fetch("https://dog.ceo/api/breeds/image/random");
+// first, fill the drop down list of dogbreeds
 
-//const printTgt=document.getElementById("printTarget");
+const breedList=document.getElementById("breedList");
+
+fetch("https://dog.ceo/api/breeds/list")
+    .then(response=>response.json())
+    .then(data=>fillOptions(data.message))
+    .catch(errorReport)
+    
+function fillOptions(data)
+{
+    
+    const options = data.map(item => `
+    <option value='${item}'>${item}</option>
+  `).join('');
+  breedList.innerHTML = options;
+}
+
+// Now, if the user clicks the button, generate a random dog image
 
 const dogImgDiv = document.getElementById("dogImgDiv");
 const btnDog = document.getElementById("btnDog");
@@ -17,10 +31,6 @@ function getInfo(){
         .catch(errorReport);
         
 }
-    
-        
-        
-        
 
 
 function generateImageFromURL(dogUrl)
@@ -33,6 +43,40 @@ function generateImageFromURL(dogUrl)
     
     
 }
+
+// Now, lets make it so the user can call dog images only from the one selected in the drop down list. 
+
+const specificBtn = document.getElementById("specificBreedButton");
+specificBtn.addEventListener("click",specificDog);
+//breedList
+const specificDogDisplay= document.getElementById("specificDogDisplay");
+
+function specificDog(){
+    const selectedDog=breedList.value;
+    
+    console.log(selectedDog);
+   
+   
+   //TODO: Resolve Origin Error
+  
+     const thingToFetch =  "https://dog.ceo/api/breed/"+selectedDog+"/images/random";    
+    fetch(thingToFetch)
+        .then(response=>response.json())
+        .then(data=>renderSpecificDog(data.message))
+    
+}
+function renderSpecificDog(data)
+{
+    specificDogDisplay.innerHTML = `
+        <img src=${data} alt="${data}">
+        <p>${data}</p>
+    `
+}
+
+
+
+
+
 
 function errorReport()
 {
