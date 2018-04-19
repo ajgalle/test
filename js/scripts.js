@@ -13,7 +13,8 @@ btnDog.addEventListener("click", getInfo);
 function getInfo(){
     fetch("https://dog.ceo/api/breeds/image/random")
         .then(response=>response.json())
-        .then(data=>generateImageFromURL(data.message));
+        .then(data=>generateImageFromURL(data.message))
+        .catch(errorReport);
         
 }
     
