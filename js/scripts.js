@@ -57,7 +57,7 @@ function specificDog(){
     console.log(selectedDog);
    
    
-   //TODO: Resolve Origin Error
+
   
      const thingToFetch =  "https://dog.ceo/api/breed/"+selectedDog+"/images/random";    
     fetch(thingToFetch)
