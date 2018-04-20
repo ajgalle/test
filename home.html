@@ -13,31 +13,37 @@
   </head>
 <body>
 
-<div class="container-fluid">
+<div class="container">
+
+
+
 <div class="text-center">
-  <h1 style="padding:25px">Fetch and Promise from CodEnvy project</h1>
+  <h1 style="padding:25px">Fetch and Promise from CodEnvy Continously Deployed to Heroku Through GitHub</h1>
 </div>
-  <div class="row text-center" >
+  <div class="row text-center">
     <div class="col-sm-2"></div>
-    <div class="col-sm-4" style="background-color:lavender;"> 
-        <p>Click the button to see a picture of a dog.</p></br>
-        <button id="btnDog" class="btn btn-primary"> Click! </button>
+    
+    <div class="col-sm-4" style="background-color:lavender; height:300px; padding: 5%"> 
+       
+        <p >Click the button to see a picture of a dog.</p></br>
+        <button id="btnDog" class="btn btn-primary " > Click! </button>
+       
     </div>
     
-    <div class="col-sm-4" id="dogImgDiv" style="background-color:lavenderblush;">
+    <div class="col-sm-4 " id="dogImgDiv" style="background-color:lavenderblush;height:300px;padding: 5%">
         <img id="displayImage" src="http://dog.ceo/img/dog-api-logo.svg" style="height:200px; width:200px;" alt="API by dog.ceo">
         <p>Thank you to <a href="http://dog.ceo/dog-api/" target="_blank">Dog CEO</a> for the API<p>
     </div>
+    
     <div class="col-sm-2"></div>
-     
-  </div>
+    </div>
 </div>
 
 <div class="text-center">
-    <button class="btn btn-info" id="specificBreedButton"> Click to view a dog only of the selected breed:</button>
-    <select style = "width:50%" id="breedList"></select>
-    <div id="specificDogDisplay"></div>
-    
+    <h1 style="padding:25px"> Tired of random dogs?</h1>
+        <select style = "width:35%;margin:10px" id="breedList"></select><br>
+        <button style="margin:10px" class="btn btn-info" id="specificBreedButton"> Click to view a dog only of the selected breed:</button>
+    <div id="specificDogDisplay" style="margin:20px"></div>
  </div>
 
  <script src="js/scripts.js"></script>
